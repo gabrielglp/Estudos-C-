@@ -1,0 +1,51 @@
+Classes abstract (também as interfaces) são como uma simplificação de código, ou seja, ajuda na organização, manutenção e por exemplo
+ na repetição de código no caso do abstract (porque a interface obriga a implementação). Um outro exemplo, você tem duas classes que 
+ tem códigos iguais e decide fazer uma herança:
+
+namespace Test 
+{
+    class A 
+    {
+        public void MetOne() 
+        {
+            System.Console.WriteLine("Classe A feita!");
+            // Faz oque se pede...
+        }
+
+        public void MetTwo() 
+        {
+            System.Console.WriteLine("Classe A feita!");
+            // Faz oque se pede...
+        }
+    }
+
+    class B : A { }
+}
+
+O código acima foi feito de forma errada, pois, qualquer alteração na classe A afetará a classe B, então para evitar erros futuros fazemos o seguinte:
+
+namespace Test 
+{
+    abstract class AB 
+    {
+        public void MetOne() 
+        {
+            System.Console.WriteLine("Classe A feita!");
+            // Faz oque se pede...
+        }
+
+        public void MetTwo() 
+        {
+            System.Console.WriteLine("Classe A feita!");
+            // Faz oque se pede...
+        }
+    }
+
+    class A : AB { }
+
+    class B : AB { }
+}
+
+Agora qualquer alteração ou manutenção na classe A será apenas da classe A.
+
+Espero que minha explicação tenha sido boa cara, abraços 👍👍👍
